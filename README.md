@@ -1,23 +1,23 @@
 # Run Tracker Application
 
-Reach your running goals with the **Run Tracker** app, designed to help you track and analyze your running activities with precision. Whether you're training for a marathon or just staying fit, Run Tracker provides real-time GPS tracking, detailed statistics, and comprehensive graphs to ensure you stay on top of your progress.
+Achieve your fitness goals with **Level Up**, an intuitive app designed to track and analyze your running activities with precision. Whether you're a seasoned marathon runner or just starting out, Run Tracker offers real-time GPS tracking, insightful statistics, and interactive graphs to help you stay motivated and improve your performance.
 
 ## Key Features
 
-- **Map Your Runs**: Record your routes with GPS in real-time. Save your paths and easily share your route maps with friends and family to showcase your achievements.
-  
-- **Running History**: All your running data, including distance, time, and calories burned, is stored and analyzed in the History section, allowing you to monitor your progress over time.
+- **Real-Time GPS Tracking**: Record your runs with accurate GPS tracking and save your routes. Share your mapped-out paths with friends and family to celebrate your milestones.
 
-- **Graph Analysis**: View your running stats in detailed graphs. Track metrics such as distance, speed, and time to better understand your performance and identify areas for improvement.
+- **Comprehensive Running History**: Keep a detailed log of all your runs, including distance, time, and calories burned, so you can monitor your improvement over time.
 
-- **Customizable Settings**: Tailor the app to your needs by setting daily running targets, adjusting measurement units, selecting your preferred language, and more.
+- **Detailed Graphs & Analysis**: Dive into your stats with easy-to-read graphs showing your performance metrics such as speed, distance, and time. Use these insights to identify trends and areas for improvement.
 
-- **Data Sync**: Sync your running data with your Google accounts, ensuring that your progress is backed up and accessible across devices.
+- **Personalized Settings**: Customize the app according to your needs. Set daily goals, choose between metric or imperial units, and select your preferred language for a tailored experience.
+
+- **Cloud Sync**: Seamlessly sync your running data with your Google account, ensuring all your progress is backed up and accessible across multiple devices.
 
 ## Technology Stack
 
-- **Android Kotlin**: The app is built using Android Kotlin, ensuring smooth performance and compatibility with Android devices, as well as a native, user-friendly interface.
+- **Android Kotlin**: Developed using Android Kotlin for optimal performance on Android devices, offering a smooth and native user experience.
 
-- **Google AdMob**: Integrated for in-app advertisements, generating revenue while maintaining a seamless user experience.
+- **Google AdMob**: Integrates in-app advertisements to generate revenue without interrupting the user experience.
 
-- **Firebase**: Used for data storage, user authentication, and real-time syncing of your running statistics and achievements, ensuring a reliable and secure experience.
+- **Firebase**: Powers data storage, user authentication, and real-time syncing, ensuring your running stats and progress are securely managed and accessible in real-time.
