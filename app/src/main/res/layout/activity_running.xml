@@ -289,7 +289,8 @@
                             android:layout_height="@dimen/_40sdp"
                             android:scaleX="1.5"
                             android:scaleY="1.5"
-                            android:src="@drawable/ic_lock" />
+                            android:src="@drawable/ic_lock"
+                            />
 
 
                     </LinearLayout>

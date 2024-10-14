@@ -159,11 +159,13 @@
                         android:paddingVertical="@dimen/_15sdp">
 
                         <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_20sdp"
-                            android:layout_height="@dimen/_20sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:src="@drawable/ic_setting_daily_goal_svg" />
+                            android:src="@drawable/ic_setting_daily_goal_svg"
+                            android:tint="@color/startColor"
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -244,7 +246,10 @@
                             android:layout_height="@dimen/_20sdp"
                             android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:src="@drawable/ic_setting_utnit_svg" />
+                            android:src="@drawable/ic_setting_utnit_svg"
+                            android:tint="@color/startColor"
+
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -352,7 +357,9 @@
                             android:layout_height="@dimen/_20sdp"
                             android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:src="@drawable/ic_setting_reminder_svg" />
+                            android:src="@drawable/ic_setting_reminder_svg"
+                            android:tint="@color/startColor"
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -433,7 +440,9 @@
                             android:layout_height="@dimen/_20sdp"
                             android:layout_gravity="center"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:src="@drawable/ic_setting_language_svg" />
+                            android:src="@drawable/ic_setting_language_svg"
+                            android:tint="@color/startColor"
+                            />
 
                         <LinearLayout
                             android:layout_width="0dp"

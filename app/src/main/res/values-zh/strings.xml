@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Run Tracker</string>
+    <string name="app_name">Level Up</string>
     <string name="default_web_client_id">251759560232-2dhgl86krj4ikrsj1b7sb0243s1897qp.apps.googleusercontent.com</string>
     <string name="distance">Distance</string>
     <string name="duration">Duration</string>

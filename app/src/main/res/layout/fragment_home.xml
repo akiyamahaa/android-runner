@@ -179,7 +179,9 @@
                                 android:layout_width="@dimen/_30sdp"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/ic_home_location" />
+                                android:src="@drawable/ic_home_location"
+                                android:tint="@color/startColor"
+                                />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -250,7 +252,9 @@
                                 android:layout_width="@dimen/_30sdp"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/ic_home_time" />
+                                android:src="@drawable/ic_home_time"
+                                android:tint="@color/startColor"
+                                />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -328,7 +332,9 @@
                                 android:layout_width="@dimen/_30sdp"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/ic_home_kcal" />
+                                android:src="@drawable/ic_home_kcal"
+                                android:tint="@color/startColor"
+                                />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -399,7 +405,9 @@
                                 android:layout_width="@dimen/_30sdp"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:src="@drawable/ic_home_speed" />
+                                android:src="@drawable/ic_home_speed"
+                                android:tint="@color/startColor"
+                                />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -597,7 +605,8 @@
                             android:layout_height="@dimen/_40sdp"
                             android:layout_marginVertical="@dimen/_10sdp"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:src="@drawable/ic_best_distance" />
+                            android:src="@drawable/ic_best_distance"
+                            />
 
                         <LinearLayout
                             android:layout_width="match_parent"
