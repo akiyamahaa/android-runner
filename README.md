@@ -1,5 +1,10 @@
 # Level Up Application
 
+## Logo
+  <img src="./readme/ic_app.webp" width="200"/>
+
+## Description
+
 Achieve your fitness goals with **Level Up**, an intuitive app designed to track and analyze your running activities with precision. Whether you're a seasoned marathon runner or just starting out, Run Tracker offers real-time GPS tracking, insightful statistics, and interactive graphs to help you stay motivated and improve your performance.
 
 ## Key Features
@@ -21,3 +26,21 @@ Achieve your fitness goals with **Level Up**, an intuitive app designed to track
 - **Google AdMob**: Integrates in-app advertisements to generate revenue without interrupting the user experience.
 
 - **Firebase**: Powers data storage, user authentication, and real-time syncing, ensuring your running stats and progress are securely managed and accessible in real-time.
+
+## Screenshots
+
+Here are some screenshots of LevelUp in action:
+<div>
+  <img src="./readme/image0.png" width="200"/>
+  <img src="./readme/image1.png" width="200"/>
+  <img src="./readme/image2.png" width="200"/>
+  <img src="./readme/image4.png" width="200"/>
+  <img src="./readme/image3.png" width="200"/>
+  <img src="./readme/image5.png" width="200"/>
+</div>
+
+## Download Demo
+
+You can download the demo version of LevelUp here:
+
+- [Download for Android](https://drive.google.com/file/d/1c1Gvue3kBF5_luPuGwEZuEEtwMlX9m9q/view?usp=sharing)
