@@ -1,11 +1,11 @@
-# Level Up Application
+# Askme Run Application
 
 ## Logo
-  <img src="./readme/ic_app.webp" width="200"/>
+  <img src="./readme/ic_app.png" width="200"/>
 
 ## Description
 
-Achieve your fitness goals with **Level Up**, an intuitive app designed to track and analyze your running activities with precision. Whether you're a seasoned marathon runner or just starting out, Run Tracker offers real-time GPS tracking, insightful statistics, and interactive graphs to help you stay motivated and improve your performance.
+Achieve your fitness goals with **Askme Run**, an intuitive app designed to track and analyze your running activities with precision. Whether you're a seasoned marathon runner or just starting out, Run Tracker offers real-time GPS tracking, insightful statistics, and interactive graphs to help you stay motivated and improve your performance.
 
 ## Key Features
 
@@ -43,4 +43,4 @@ Here are some screenshots of LevelUp in action:
 
 You can download the demo version of LevelUp here:
 
-- [Download for Android](https://drive.google.com/file/d/1c1Gvue3kBF5_luPuGwEZuEEtwMlX9m9q/view?usp=sharing)
+- [Download for Android](https://drive.google.com/file/d/11VM66EjP-HYRPtlMY13zH__j8PQZ4XV4/view?usp=sharing)

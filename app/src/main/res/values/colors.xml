@@ -5,7 +5,7 @@
     <color name="whiteOp30">#30FFFFFF</color>
     <color name="whiteOp50">#80FFFFFF</color>
     <color name="popupBgColor">#FFFFFF</color>
-    <color name="theme">#994ECC</color>
+    <color name="theme">#1e81f0</color>
     <color name="theme1f">#1f466AEC</color>
     <color name="theme2f">#2f466AEC</color>
     <color name="theme3f">#3f466AEC</color>
@@ -14,7 +14,7 @@
     <color name="theme6f">#6f466AEC</color>
     <color name="theme7f">#7f466AEC</color>
     <color name="theme8f">#8f466AEC</color>
-    <color name="theme9f">#9f8000FF</color>
+    <color name="theme9f">#9f466AEC</color>
     <color name="darkTheme">#142850</color>
     <color name="lightTheme2">#F9D6D6</color>
     <color name="lightTheme1">#FFF2F2</color>
@@ -46,7 +46,7 @@
     <color name="borderOfProfileSetting">#8B9DA3</color>
     <color name="txtColorOfSleep">#8189B0</color>
 
-    <color name="startColor">#994ECC</color>
+    <color name="startColor">#1e81f0</color>
 
     <color name="stepsAchiveTrans">#50ED213A</color>
     <color name="dayAchiveTrans">#50418ED6</color>
@@ -60,7 +60,7 @@
     <color name="dayAchive">#418ED6</color>
     <color name="kmAchive">#AA75CB</color>
 
-    <color name="endColor">#3E187A</color>
+    <color name="endColor">#78e990</color>
     <color name="cardBgColor">#F8F8F8</color>
     <color name="mainCardColor">#F8F8F8</color>
     <color name="bgOfSleepGray">#F5F5F5</color>
