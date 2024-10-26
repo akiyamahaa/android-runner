@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Askme Run</string>
+    <string name="app_name" translatable="false">Rhythm Run</string>
     <string name="default_web_client_id" translatable="false">251759560232-2dhgl86krj4ikrsj1b7sb0243s1897qp.apps.googleusercontent.com</string>
     <string name="AD_MOB_APPLICATION_ID" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
     <string name="distance" translatable="false">Distance</string>

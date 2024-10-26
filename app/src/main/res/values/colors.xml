@@ -46,7 +46,7 @@
     <color name="borderOfProfileSetting">#8B9DA3</color>
     <color name="txtColorOfSleep">#8189B0</color>
 
-    <color name="startColor">#1e81f0</color>
+    <color name="startColor">#02d3de</color>
 
     <color name="stepsAchiveTrans">#50ED213A</color>
     <color name="dayAchiveTrans">#50418ED6</color>
@@ -60,7 +60,7 @@
     <color name="dayAchive">#418ED6</color>
     <color name="kmAchive">#AA75CB</color>
 
-    <color name="endColor">#78e990</color>
+    <color name="endColor">#3c58e6</color>
     <color name="cardBgColor">#F8F8F8</color>
     <color name="mainCardColor">#F8F8F8</color>
     <color name="bgOfSleepGray">#F5F5F5</color>
