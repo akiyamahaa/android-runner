@@ -41,6 +41,6 @@ Here are some screenshots of LevelUp in action:
 
 ## Download Demo
 
-You can download the demo version of LevelUp here:
+You can download the demo version of Rhythm Run here:
 
 - [Download for Android](https://drive.google.com/file/d/1vBN7oXq7UIYGQQt223WEBYqigVw04N9L/view?usp=sharing)
