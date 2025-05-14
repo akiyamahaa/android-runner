@@ -489,8 +489,8 @@
 
             <!--Account Settings-->
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_15sdp"
@@ -502,8 +502,8 @@
                 app:textAllCaps="true" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/tabBg"
@@ -541,14 +541,14 @@
                             android:orientation="vertical">
 
                             <androidx.appcompat.widget.AppCompatTextView
-
+                                android:id="@+id/tv_backup_restore"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:ellipsize="end"
                                 android:fontFamily="@font/roboto_regular"
                                 android:singleLine="true"
-                                android:text="@string/backup_restore"
+                                android:text="@string/login"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp" />
 
@@ -564,7 +564,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_autorenew_24"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:tint="@color/black" />
 
 
@@ -618,6 +618,64 @@
                     </LinearLayout>
 
 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:cardBackgroundColor="@color/tabBg"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:tint="@color/lightBlueTextColor"
+                            android:src="@drawable/splash_logo" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:singleLine="true"
+                                android:text="Logout"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

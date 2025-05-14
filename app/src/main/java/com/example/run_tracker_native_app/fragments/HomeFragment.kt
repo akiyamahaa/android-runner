@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.run_tracker_native_app.R
 import com.example.run_tracker_native_app.activity.HistoryDetailActivity
+import com.example.run_tracker_native_app.activity.MainActivity
 import com.example.run_tracker_native_app.adapter.RecentHistoryADP
 import com.example.run_tracker_native_app.database.MyRunningEntity
 import com.example.run_tracker_native_app.databinding.FragmentHomeBinding
@@ -67,9 +68,10 @@ class HomeFragment : Fragment() {
         initRecentHistoryADP()
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     private fun getMyPrefFromDatabase() {
         homeViewModel.myPrefLiveData.observe(viewLifecycleOwner) { myPref ->
+            if (myPref == null) return@observe
             binding.tvDailyGoal.text = "${myPref.dailyGoal} ${myPref.distanceUnit.uppercase()}"
             binding.tvDistanceUnit1.text = myPref.distanceUnit.uppercase()
             binding.tvDistanceUnit2.text = myPref.distanceUnit.uppercase()
@@ -110,15 +112,19 @@ class HomeFragment : Fragment() {
                 minutes, secs
             )
             binding.tvTotalTime.text = time
+            MainActivity.instance.getStatisticData().totalTime = totalTime.toFloat()
         }
 
         homeViewModel.myTotalCal.observe(viewLifecycleOwner) { totalCal ->
             if (totalCal == null) return@observe
             binding.tvTotalCal.text = String.format("%.2f", totalCal)//totalCal.toInt().toString()
+            //limit display in firebase
+            MainActivity.instance.getStatisticData().totalCalories = String.format("%.2f", totalCal).toFloat()
         }
         homeViewModel.myTotalAvgSpeed.observe(viewLifecycleOwner) { totalAvg ->
             if (totalAvg == null) return@observe
             binding.tvAvgSpeed.text = String.format("%.2f", totalAvg)//totalCal.toInt().toString()
+            MainActivity.instance.getStatisticData().totalAverageSpeed = String.format("%.2f", totalAvg).toFloat()
         }
         homeViewModel.myLongestDistance.observe(viewLifecycleOwner) { longestDistance ->
             if (longestDistance == null) return@observe
@@ -132,6 +138,7 @@ class HomeFragment : Fragment() {
             if (topSpeed == null) return@observe
             Handler(Looper.getMainLooper()).postDelayed({
                 binding.tvTopSpeed.text = String.format("%.2f", topSpeed)
+                MainActivity.instance.getBestRecord().topSpeed = (Math.round(topSpeed * 100.0) / 100.0).toFloat()
                 binding.tvTopSpeedUnit.text = "$distanceUnit/HRS"
             }, 500)
 
@@ -147,6 +154,7 @@ class HomeFragment : Fragment() {
                 "%02d:%02d:%02d", hours,
                 minutes, secs
             )
+            MainActivity.instance.getBestRecord().longestDuration = longestDuration
             binding.tvLongestDuration.text = time
         }
     }
@@ -154,6 +162,7 @@ class HomeFragment : Fragment() {
     private fun getLongestDistanceRecord() {
         val distance =
             if (distanceUnit == "km") longestDistanceRecord / 1000.0 else longestDistanceRecord / 1609.34
+        MainActivity.instance.getBestRecord().longestDistance = distance.toFloat()
         binding.tvLongestDistance.text = String.format("%.2f", distance)
     }
 
@@ -166,6 +175,7 @@ class HomeFragment : Fragment() {
            if(distance<10) binding.tvTotalDistance.text = String.format("0%.2f", distance)
            else binding.tvTotalDistance.text = String.format("%.2f", distance)
         }
+        MainActivity.instance.getStatisticData().totalDistance = binding.tvTotalDistance.text.toString().toFloat()
     }
 
     private fun getMyTotalDistanceToday() {

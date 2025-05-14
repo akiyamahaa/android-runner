@@ -22,6 +22,8 @@ object Constant {
     const val TABLE_PREFERENCE_HOUR_REMINDER = "reminderTimeHour"
     const val TABLE_PREFERENCE_MINUTE_REMINDER = "reminderTimeMinute"
     const val TABLE_PREFERENCE_LANGUAGE = "language"
+    const val TABLE_BEST_RECORDS = "BestRecords"
+    const val TABLE_STATISTIC_DATA = "StatisticData"
 
     /*User Table*/
     const val TABLE_USERS = "RunTrackerUsers"

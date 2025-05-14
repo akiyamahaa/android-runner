@@ -16,6 +16,8 @@ import androidx.viewpager.widget.ViewPager
 import com.example.run_tracker_native_app.R
 import com.example.run_tracker_native_app.adapter.ViewPagerAdapterMain
 import com.example.run_tracker_native_app.databinding.ActivityMainBinding
+import com.example.run_tracker_native_app.dataclass.BestRecordData
+import com.example.run_tracker_native_app.dataclass.StatisticData
 import com.example.run_tracker_native_app.fragments.HomeFragment
 import com.example.run_tracker_native_app.interfaces.CallbackListener
 import com.example.run_tracker_native_app.utils.Constant
@@ -23,6 +25,20 @@ import com.example.run_tracker_native_app.utils.Util
 
 
 class MainActivity : BaseActivity(), HomeFragment.OnClickFragmentToActivity, CallbackListener {
+    private var bestRecordData: BestRecordData = BestRecordData(0f, 0f, 0)
+    private var statisticData: StatisticData = StatisticData(0f, 0f, 0f, 0f)
+    companion object {
+        lateinit var instance: MainActivity
+    }
+
+    fun getBestRecord(): BestRecordData {
+        return bestRecordData
+    }
+
+    fun getStatisticData(): StatisticData {
+        return statisticData
+    }
+
     private lateinit var binding: ActivityMainBinding
     var backPressedTime: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +49,7 @@ class MainActivity : BaseActivity(), HomeFragment.OnClickFragmentToActivity, Cal
         window.setLightStatusBars(false)
         initBottomView()
         onBackPressedDispatcher.addCallback(this,onBackPressedCallback);
-
+        instance = this
 //        Util.loadBannerAd(binding.llAdView,binding.llAdViewFacebook,this)
     }
     private var onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {

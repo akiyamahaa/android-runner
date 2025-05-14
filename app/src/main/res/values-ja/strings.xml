@@ -147,4 +147,5 @@
     <string name="_yes">はい</string>
     <string name="_no">いいえ</string>
     <string name="total">Total</string>
+    <string name="login">Login with Google</string>
 </resources>

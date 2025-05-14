@@ -147,4 +147,5 @@
     <string name="_yes">SÌ</string>
     <string name="_no">NO</string>
     <string name="total">Total</string>
+    <string name="login">Login with Google</string>
 </resources>

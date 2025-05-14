@@ -41,6 +41,7 @@ import com.example.run_tracker_native_app.activity.SubscriptionActivity
 import com.example.run_tracker_native_app.adapter.LanguagesADP
 import com.example.run_tracker_native_app.database.MyPref
 import com.example.run_tracker_native_app.database.MyRunningEntity
+import com.example.run_tracker_native_app.database.helpers.MyLocationDatabase
 import com.example.run_tracker_native_app.databinding.FragmentSettingBinding
 import com.example.run_tracker_native_app.dataclass.AchievementData
 import com.example.run_tracker_native_app.utils.Constant
@@ -61,6 +62,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
+import java.util.concurrent.Executors
 import com.intuit.sdp.R.dimen as sdp
 
 
@@ -118,7 +120,9 @@ class SettingFragment : Fragment() {
             }
             firebaseAuthWithGoogle(credential)
             Log.e("TAG", "handleSignInResult:::Data==>>  " + Gson().toJson(account))
+            updateStatUI(true)
         } catch (e: ApiException) {
+            updateStatUI(false)
             Log.e("TAG", "signInResult:failed code=" + e.statusCode)
         }
     }
@@ -158,6 +162,8 @@ class SettingFragment : Fragment() {
                     }
                     getPreferenceLocalAndSetServer()
                     getMyRunningTableDataAndSetServer()
+                    getBestRecordsAndSetServer()
+                    getStatisticDataAndSetServer()
                 } else {
                     getPreferenceServerAndSetLocal()
                     getHistoryServerAndSetLocal()
@@ -173,7 +179,7 @@ class SettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val isLogin = Util.isLogin(requireContext())
         binding.llAchievement.setOnClickListener {
             val intent = Intent(requireContext(), AchievementsActivity::class.java)
             startActivity(intent)
@@ -214,13 +220,12 @@ class SettingFragment : Fragment() {
         getFirebaseUser()
         firebaseAuth!!.addAuthStateListener(authStateListener!!)
         val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken("859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
         mSignInClient = GoogleSignIn.getClient(requireContext(), options)
-        binding.llBackupRestore.visibility =
-            if (Util.isPurchased(requireContext())) View.VISIBLE else View.GONE
+        binding.llBackupRestore.visibility = View.VISIBLE
 
         binding.llSubscription.visibility =
             if (Util.isPurchased(requireContext())) View.GONE else View.VISIBLE
@@ -228,17 +233,17 @@ class SettingFragment : Fragment() {
 //        binding.viSub.visibility =
 //            if (Util.isPurchased(requireContext())) View.GONE else View.VISIBLE
 
+        updateStatUI(isLogin)
         binding.llBackupAndRestore.setOnClickListener {
-            if (!Util.isLogin(requireContext())) {
-                onLoginProcess()
-            }
-        }
-        binding.imgSyncData.setOnClickListener {
-            if (!Util.isLogin(requireContext())) {
+            if (!isLogin) {
                 onLoginProcess()
             } else {
                 onSync(isShowDialog = true)
             }
+        }
+
+        binding.cvLogout.setOnClickListener {
+            openSignOutDialog()
         }
 
         binding.llRateUs.setOnClickListener {
@@ -287,6 +292,18 @@ class SettingFragment : Fragment() {
 //        setLocalData()  shreyuinfotech2019@gmail.com
     }
 
+    private fun updateStatUI(isLogin: Boolean) {
+        if (isLogin) {
+            binding.imgSyncData.visibility = View.VISIBLE
+            binding.cvLogout.visibility = View.VISIBLE
+            binding.tvBackupRestore.text = getString(R.string.backup_restore)
+        } else {
+            binding.imgSyncData.visibility = View.GONE
+            binding.cvLogout.visibility = View.GONE
+            binding.tvBackupRestore.text = getString(R.string.login)
+        }
+    }
+
     private fun contactUs() {
         try {
             val intent = Intent(Intent.ACTION_SEND)
@@ -322,14 +339,14 @@ class SettingFragment : Fragment() {
                 val signInIntent: Intent = mSignInClient!!.signInIntent
                 someActivityResultLauncher.launch(signInIntent)
             } else {
-                openSignOtDialog()
+                openSignOutDialog()
             }
         } else {
             Util.showToast(requireContext(), getString(R.string.no_internet))
         }
     }
 
-    private fun openSignOtDialog() {
+    private fun openSignOutDialog() {
         val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
         builder1.setMessage(getString(R.string.are_you_sure_sign_out))
         builder1.setCancelable(true)
@@ -342,6 +359,7 @@ class SettingFragment : Fragment() {
             getFirebaseUser()
             Util.setPref(requireContext(), Constant.IS_LOGIN, false)
             dialog.dismiss()
+            clearAllDb()
         }
 
         builder1.setNegativeButton(
@@ -350,6 +368,25 @@ class SettingFragment : Fragment() {
 
         val alert11: AlertDialog = builder1.create()
         alert11.show()
+    }
+
+    private fun clearAllDb() {
+        val executor = Executors.newSingleThreadExecutor()
+        val db = MyLocationDatabase.getInstance(requireContext())
+        executor.execute {
+            // Clear all tables
+            db.clearAllTables()
+
+            // Re-initialize default preferences
+            val defaultPref = MyPref(
+                id = 1,
+                reminderTimeHour = 8,
+                reminderTimeMinute = 0,
+                reminderDays = listOf(1,2,3,4,5,6,7)
+            )
+            settingsViewModel.insertMyPref(defaultPref)
+        }
+        MainActivity.instance.recreate()
     }
 
     private fun getFirebaseUser() {
@@ -812,6 +849,31 @@ class SettingFragment : Fragment() {
         }
     }
 
+    private fun getBestRecordsAndSetServer() {
+        val bestRecordRef = fireStore.collection(Constant.TABLE_USERS)
+            .document(firebaseUser!!.uid)
+            .collection(Constant.TABLE_BEST_RECORDS)
+            .document("best_records")
+        MainActivity.instance.getBestRecord().let {
+            fireStore.runBatch {
+                batch -> batch.set(bestRecordRef, it)
+            }
+        }
+    }
+
+    private fun getStatisticDataAndSetServer() {
+        val statisticDataRef = fireStore.collection(Constant.TABLE_USERS)
+            .document(firebaseUser!!.uid)
+            .collection(Constant.TABLE_STATISTIC_DATA)
+            .document("statistic_data")
+
+        MainActivity.instance.getStatisticData().let {
+            fireStore.runBatch {
+                batch -> batch.set(statisticDataRef, it)
+            }
+        }
+    }
+
     private fun ByteArray.toBase64String(): String = Base64.encodeToString(this, Base64.DEFAULT)
 
     private fun String.toByteArray(): ByteArray = Base64.decode(this, Base64.DEFAULT)
@@ -848,7 +910,7 @@ class SettingFragment : Fragment() {
                     val myRunningEntityData: List<MyRunningEntity> =
                         documentSnapshots.toObjects(MyRunningEntity::class.java)
                     for (myRunningHistory in myRunningEntityData) {
-                        myRunningHistory.image = myRunningHistory.imageString!!.toByteArray()
+                        myRunningHistory.image = (myRunningHistory.imageString ?: "").toByteArray()
                         myRunningHistory.isSynchronized = true
                     }
                     settingsViewModel.insertAll(myRunningEntityData)

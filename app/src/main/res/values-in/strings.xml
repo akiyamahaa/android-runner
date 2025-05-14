@@ -147,4 +147,5 @@
     <string name="_yes">Ya</string>
     <string name="_no">TIDAK</string>
     <string name="total">Total</string>
+    <string name="login">Login with Google</string>
 </resources>

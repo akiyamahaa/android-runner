@@ -147,4 +147,5 @@
     <string name="_yes">అవును</string>
     <string name="_no">లేదు</string>
     <string name="total">Total</string>
+    <string name="login">Login with Google</string>
 </resources>
