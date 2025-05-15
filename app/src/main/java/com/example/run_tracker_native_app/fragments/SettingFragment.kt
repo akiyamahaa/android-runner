@@ -235,7 +235,11 @@ class SettingFragment : Fragment() {
 
         updateStatUI(isLogin)
         binding.llBackupAndRestore.setOnClickListener {
-            onSync(isShowDialog = true)
+            if (!Util.isLogin(requireContext())) {
+                onLoginProcess()
+            } else {
+                onSync(isShowDialog = true)
+            }
         }
 
         binding.cvLogout.setOnClickListener {
