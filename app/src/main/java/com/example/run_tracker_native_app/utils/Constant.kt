@@ -74,4 +74,7 @@ object Constant {
     const val SPLASH_SCREEN_COUNT = "splash_screen_count"
     const val STATUS_ENABLE_DISABLE = "STATUS_ENABLE_DISABLE"
 
+    const val PROMPT = "Bạn là một huấn luyện viên chạy bộ giàu kinh nghiệm.\n" +
+            "Thông tin người chạy: %s.\n" +
+            "Hãy tư vấn ngắn gọn, súc tích, thân thiện, có thể gợi ý cường độ, dinh dưỡng hoặc phụ kiện phù hợp."
 }

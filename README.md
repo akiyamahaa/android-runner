@@ -21,3 +21,15 @@ Achieve your fitness goals with **Level Up**, an intuitive app designed to track
 - **Google AdMob**: Integrates in-app advertisements to generate revenue without interrupting the user experience.
 
 - **Firebase**: Powers data storage, user authentication, and real-time syncing, ensuring your running stats and progress are securely managed and accessible in real-time.
+
+
+## Setup firebase
+
+- Lấy SHA-1 của project(04:B7:F8:00:88:93:91:A9:46:92:DE:ED:5D:59:1A:0A:A7:35:28:19) (key debug)
+- Tạo project android trên firebase cùng với SHA-1
+- Update file google-services.json
+- Trong project, tìm hết các key "default_web_client_id" trong file string.ml bằng value của field client_id trong file google-services.json
+- Tạo Authentication với sign-in method là google
+- Tạo firestore database (tạo collection "RunTrackerUsers" nếu không thấy data được insert)
+
+

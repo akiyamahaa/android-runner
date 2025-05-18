@@ -18,6 +18,7 @@ import com.example.run_tracker_native_app.adapter.ViewPagerAdapterMain
 import com.example.run_tracker_native_app.databinding.ActivityMainBinding
 import com.example.run_tracker_native_app.dataclass.BestRecordData
 import com.example.run_tracker_native_app.dataclass.StatisticData
+import com.example.run_tracker_native_app.fragments.ChatBoxFragment
 import com.example.run_tracker_native_app.fragments.HomeFragment
 import com.example.run_tracker_native_app.interfaces.CallbackListener
 import com.example.run_tracker_native_app.utils.Constant
@@ -51,6 +52,12 @@ class MainActivity : BaseActivity(), HomeFragment.OnClickFragmentToActivity, Cal
         onBackPressedDispatcher.addCallback(this,onBackPressedCallback);
         instance = this
 //        Util.loadBannerAd(binding.llAdView,binding.llAdViewFacebook,this)
+
+        binding.ivChatBot.setOnClickListener {
+            val chatBoxFragment = ChatBoxFragment()
+            chatBoxFragment.show(supportFragmentManager, chatBoxFragment.tag)
+        }
+
     }
     private var onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {

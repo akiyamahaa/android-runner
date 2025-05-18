@@ -62,6 +62,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
+import org.json.JSONObject
 import java.util.concurrent.Executors
 import com.intuit.sdp.R.dimen as sdp
 
@@ -220,7 +221,7 @@ class SettingFragment : Fragment() {
         getFirebaseUser()
         firebaseAuth!!.addAuthStateListener(authStateListener!!)
         val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com")
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
@@ -959,5 +960,24 @@ class SettingFragment : Fragment() {
                 AchievementData(distanceUnit, 100000, R.drawable.ic_100000_km, false),
             )
         )
+    }
+
+    fun extractAvatarUrlFromJson(jsonString: String): String? {
+        return try {
+            val root = JSONObject(jsonString)
+            val jwt = root.optString("zae")
+            if (jwt.isEmpty()) return null
+
+            val parts = jwt.split(".")
+            if (parts.size < 2) return null
+
+            val payloadEncoded = parts[1]
+            val payloadBytes = Base64.decode(payloadEncoded, Base64.URL_SAFE or Base64.NO_PADDING or Base64.NO_WRAP)
+            val payloadJson = JSONObject(String(payloadBytes))
+
+            payloadJson.optString("picture", null)
+        } catch (e: Exception) {
+            null
+        }
     }
 }

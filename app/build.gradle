@@ -16,6 +16,9 @@ android {
         versionCode 1
         versionName "1.1"
 
+        buildConfigField("String", "OPEN_API_KEY",  "\"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\"")
+        buildConfigField("String", "OPEN_API_URL",  "\"https://api.groq.com/openai/v1/\"")
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -109,4 +112,8 @@ dependencies {
     def billing_version = "7.0.0"
 
     implementation "com.android.billingclient:billing-ktx:$billing_version"
+
+    implementation "com.squareup.retrofit2:retrofit:2.11.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'io.noties.markwon:core:4.6.2'
 }
