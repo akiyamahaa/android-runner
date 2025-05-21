@@ -1,70 +1,41 @@
 {
   "project_info": {
-    "project_number": "859207507332",
-    "project_id": "dreamapp-8ace5",
-    "storage_bucket": "dreamapp-8ace5.firebasestorage.app"
+    "project_number": "964434243455",
+    "project_id": "running-project-2540d",
+    "storage_bucket": "running-project-2540d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:859207507332:android:3f9834dcfdcfb4934d91d1",
-        "android_client_info": {
-          "package_name": "com.example.dreamtale"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCv7DiE7V302FQ7xtagtXLrQR8OLq6wXdM"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:859207507332:android:6c5955246ea298004d91d1",
+        "mobilesdk_app_id": "1:964434243455:android:49e0ee02384c422fcbb44a",
         "android_client_info": {
           "package_name": "com.shreyanshi.run_tracker_native_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "859207507332-0ha6rt271v18gjpjlv3h9pc05160dt9q.apps.googleusercontent.com",
+          "client_id": "964434243455-gc7dt4gjukck0h6btqtb57okn44d5aul.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.shreyanshi.run_tracker_native_app",
-            "certificate_hash": "04b7f800889391a94692deed5d591a0aa7352819"
+            "certificate_hash": "1230e442bf9a8ceb9bf122397e6dcea23b74453d"
           }
         },
         {
-          "client_id": "859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com",
+          "client_id": "964434243455-jgftej3k6dumqdgm1001vaqn7ldhr4l5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCv7DiE7V302FQ7xtagtXLrQR8OLq6wXdM"
+          "current_key": "AIzaSyCkBs0cSPT5GQxQ2GTmZzuk7TGLrLXV7vU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "859207507332-j4pmhius6mvucafslofgu9o60mtm7h16.apps.googleusercontent.com",
+              "client_id": "964434243455-jgftej3k6dumqdgm1001vaqn7ldhr4l5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

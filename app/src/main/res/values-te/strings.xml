@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Run Tracker</string>
-    <string name="default_web_client_id" translatable="false">251759560232-2dhgl86krj4ikrsj1b7sb0243s1897qp.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">964434243455-jgftej3k6dumqdgm1001vaqn7ldhr4l5.apps.googleusercontent.com</string>
     <string name="distance" translatable="false">Distance</string>
     <string name="duration" translatable="false">Duration</string>
     <string name="kcal" translatable="false">Kcal</string>
