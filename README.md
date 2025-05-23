@@ -32,4 +32,9 @@ Achieve your fitness goals with **Level Up**, an intuitive app designed to track
 - Tạo Authentication với sign-in method là google
 - Tạo firestore database (tạo collection "RunTrackerUsers" nếu không thấy data được insert)
 
+## Setup chatbot
+- Config api url và api key trong file build.gradle (Module: app)
+- Sau khi sửa xong, thực hiện sync project với gradle 
+- Update ChatData.kt nếu request hoặc response trả về khác format 
+
 
